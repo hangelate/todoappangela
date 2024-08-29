@@ -7,10 +7,10 @@ import { SharedModule } from '@shared/shared.module';
 
 
 @NgModule({
-  declarations: [
+  declarations: [  //TODO: las cosas que se declaran son los componentes, pipes y directivas
     LoginPageComponent
   ],
-  imports: [
+  imports: [      //TODO: Las cosas que se importan son otros modulos
     CommonModule,
     AuthRoutingModule,
     SharedModule
