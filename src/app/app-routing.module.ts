@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidateSessionGuard } from '@core/guards/validate-session.guard';
 // import { HomeComponent } from './home/home.component';
 // import { HomeChildOneComponent } from './home-child-one/home-child-one.component';
 // import { HomeChildTwoComponent } from './home-child-two/home-child-two.component';
@@ -7,14 +8,39 @@ import { RouterModule, Routes } from '@angular/router';
 // import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [ 
-  {
-    path:'auth', //TODO: http://localhost:4200/auth
-    loadChildren: () => import('@modules/auth/auth.module').then((m) => m.AuthModule)
-  },
-  {
-    path:'task', //TODO: http://localhost:4200/task
-    loadChildren: () => import('@modules/task/task.module').then((m) => m.TaskModule)
-  }
+ 
+ {
+  path:'auth', //TODO: public
+  loadChildren:() => import('@modules/auth/auth.module').then((m) => m.AuthModule)
+ },
+ {
+  path:'task', //TODO: private
+  loadChildren:() => import('@modules/task/task.module').then((m) => m.TaskModule),
+  canActivate:[ValidateSessionGuard]
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  // {
+  //   path:'auth', //TODO: http://localhost:4200/auth
+  //   loadChildren: () => import('@modules/auth/auth.module').then((m) => m.AuthModule)
+  // },
+  // {
+  //   path:'task', //TODO: http://localhost:4200/task
+  //   loadChildren: () => import('@modules/task/task.module').then((m) => m.TaskModule)
+  // }
 
 
 

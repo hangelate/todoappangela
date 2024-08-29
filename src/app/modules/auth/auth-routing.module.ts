@@ -4,7 +4,11 @@ import { LoginPageComponent } from './page/login-page.component';
 
 const routes: Routes = [ //TODO http://localhost/auth/
   {
-    path:'',
+    path:'login',
+    component:LoginPageComponent
+  },
+  {
+    path:'register',
     component:LoginPageComponent
   }
 ]; 
