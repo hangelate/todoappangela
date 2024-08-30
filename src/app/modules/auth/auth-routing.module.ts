@@ -6,10 +6,6 @@ const routes: Routes = [ //TODO http://localhost/auth/
   {
     path:'login',
     component:LoginPageComponent
-  },
-  {
-    path:'register',
-    component:LoginPageComponent
   }
 ]; 
 
