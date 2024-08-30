@@ -5,6 +5,14 @@
         </div>
         <pre>{{registerForm.value | json}}</pre>
 
+        <div>
+            <button class="btn-primary" (click)="testLoaded()">Cargar Data</button>
+        </div>
+        <div>
+            <button class="btn-primary" (click)="testUploaded()">Actualizar Data</button>
+        </div>
+
+
         <div class="text-label d-flex d-all-center">
             Crea tu cuenta {{registerForm.invalid}}
         </div>
@@ -18,26 +26,27 @@
                 <input formControlName="name" 
                 type="text" placeholder="Introduzca nombre">
             </div>
-            <!-- <div class="form-input">
+            <div class="form-input">
                 <input formControlName="lastName" 
                 type="text" placeholder="Introduzca Apellido">
-            </div> -->
-            <!-- <div class="form-input">
+            </div>
+            <div class="form-input">
                 <input formControlName="phone" 
-                type="text" placeholder="Introduzca Telefono">
-            </div> -->
-            <!-- <div class="form-input">
+                type="text" placeholder="Introduzca el numero telefonico">
+            </div>
+            
+            <div class="form-input">
                 <input formControlName="aboutMe" 
                 type="text" placeholder="Introduzca descripción">
-            </div> -->
-            <div class="form-input">
+            </div>
+            <!-- <div class="form-input">
                 <input formControlName="password" 
                 type="password" placeholder="Introduzca la contraseña">
             </div>
             <div class="form-input">
                 <input formControlName="passwordConfirm" 
                 type="password" placeholder="Confirmar la contraseña">
-            </div>
+            </div> -->
             <div class="form-input">
                 <button [disabled]="registerForm.invalid || registerForm.pending"  class="btn-primary">Continuar</button>
             </div>
