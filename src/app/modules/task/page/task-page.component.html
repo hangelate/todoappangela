@@ -1,1 +1,6 @@
-<h1>Hola mundo, este es el task</h1>
+<app-header></app-header>
+
+<button (click)="changeText()">Cambiar</button>
+<div *ngIf="showText">
+    <h1>Hola mundo, esto es un texto</h1>
+</div>
