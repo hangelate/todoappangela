@@ -29,6 +29,11 @@ export class RegisterFormsComponent implements OnInit {
     },{
       validators:passwordMatchValidator
     })
+
+    this.registerForm.valueChanges.subscribe((res) =>{
+      console.log('Cambios: ',res)
+    })
+
   }
 
   testLoaded():void{
