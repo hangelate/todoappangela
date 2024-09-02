@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CookieModule, CookieService } from 'ngx-cookie';
 // import { TestComponentComponent } from './test-component/test-component.component';
 // import { Page404Component } from './page404/page404.component';
 // import { HomeComponent } from './home/home.component';
@@ -20,9 +21,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CookieModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
