@@ -6,8 +6,8 @@
         </div>
         <div class="menu">
             <ul>
-                <li 
-                *ngFor="let item of menu;let indice = index">
+                <li [ngClass]="{'active':(primero)}"
+                *ngFor="let item of menu;let indice = index; let primero = first">
                     <!-- {{indice}} -->
                     {{item.name}}
                 </li>
