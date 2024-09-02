@@ -2,13 +2,19 @@
     <div class="d-flex logo-section d-all-center">
         <div class="logo" [routerLink]="['/','auth','login']">
             <!-- {{testCourseService.dataTest}} -->
+             Task
         </div>
         <div class="menu">
             <ul>
                 <li 
-                *ngFor="let item of menu;let primero = first">
+                *ngFor="let item of menu;let indice = index">
+                    <!-- {{indice}} -->
                     {{item.name}}
                 </li>
+                <!-- <li [ngClass]="{'active':(first)}"
+                *ngFor="let m of menu;let first = first">
+                    {{m.name}}
+                </li> -->
             </ul>
         </div>
     </div>

@@ -7,15 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskPageComponent implements OnInit {
 
-  showText = true;
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  changeText():void{
-    this.showText = !this.showText;
   }
 
 }
