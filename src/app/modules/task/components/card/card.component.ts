@@ -1,4 +1,5 @@
 import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
+import { TestCourseService } from '@shared/services/test-course.service';
 import { interval } from 'rxjs';
 
 @Component({
@@ -12,31 +13,22 @@ export class CardComponent implements OnInit, AfterViewInit, AfterViewChecked, D
   @Input() idOrder: string | number = 0
   @Input() items: Array<any>=[]
 
-  constructor(private render2:Renderer2) { }
+  constructor(private testCourseService:TestCourseService) { }
   
 
-  ngOnInit(): void {
-    // interval(1000).subscribe(() => {
-    //   this.idOrder = Date.now()
-    // })
-  }
+  ngOnInit(): void {  }
 
   ngAfterViewInit(): void {
-    const elementTitle = this.elementRefId.nativeElement;
-    this.render2.setStyle(elementTitle,'color','red')
-    // console.log('Hola, aqui estoy', this.elementRefId)
+    
   }
 
-  ngAfterViewChecked(): void {
+  ngAfterViewChecked(): void {  }
 
-    console.log('Hola mundo')
-  }
+  ngDoCheck(): void {}
 
-  ngDoCheck(): void {
-    console.log('Hola soy el do check')
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes)
+  sendData():void{
+    this.testCourseService.setData('Hola desde card')
   }
 }
