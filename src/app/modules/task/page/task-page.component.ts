@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TaskPageComponent implements OnInit {
 
 
-  case:number = 348;
+  // case:number = 348;
 
   constructor() { }
 
