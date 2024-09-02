@@ -1,12 +1,13 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
 import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css'],
+  // changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class CardComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class CardComponent implements OnInit, AfterViewInit, AfterViewChecked, DoCheck, OnChanges {
   @ViewChild('refId') elementRefId : ElementRef = new ElementRef('')
   @Input() idOrder: string | number = 0
   @Input() items: Array<any>=[]
@@ -15,9 +16,9 @@ export class CardComponent implements OnInit, AfterViewInit, AfterViewChecked {
   
 
   ngOnInit(): void {
-    interval(1000).subscribe(() => {
-      this.idOrder = Date.now()
-    })
+    // interval(1000).subscribe(() => {
+    //   this.idOrder = Date.now()
+    // })
   }
 
   ngAfterViewInit(): void {
@@ -31,4 +32,11 @@ export class CardComponent implements OnInit, AfterViewInit, AfterViewChecked {
     console.log('Hola mundo')
   }
 
+  ngDoCheck(): void {
+    console.log('Hola soy el do check')
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes)
+  }
 }
