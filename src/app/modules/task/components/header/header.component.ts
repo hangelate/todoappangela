@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
+  selector: 'app-header', //TODO: el tag que usas para llamar este componente
+  templateUrl: './header.component.html', 
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
