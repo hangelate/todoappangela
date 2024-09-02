@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<div class="padre" [ngSwitch]="case">
+
+    <div *ngSwitchCase="1" class="hijo">Hola soy Angela</div>
+
+    <div *ngSwitchCase="2" class="hijo">Hola soy Yaneth</div>
+
+    <div *ngSwitchCase="3" class="hijo">Hola soy Angela y Yaneth</div>
+
+    <div *ngSwitchDefault class="hijo">opcion por defecto</div>
+
+</div>
