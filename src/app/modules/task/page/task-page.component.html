@@ -1,2 +1,9 @@
 <app-header></app-header>
-<app-column [data]="listUser"></app-column>
+<div class="task-columns">
+    
+    <app-column [name]="group.label" [data]="group.list"
+    *ngFor="let group of groups">
+    </app-column>
+    
+</div>
+
